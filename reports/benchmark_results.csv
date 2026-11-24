@@ -1,0 +1,6 @@
+URL,BeautifulSoup_Avg_Time,Scrapy_Avg_Time,BeautifulSoup_Text_Length,Scrapy_Text_Length
+https://en.wikipedia.org/wiki/Climate_change,0.5011035199999242,0.14233493999963684,218922,356849
+https://en.wikipedia.org/wiki/Renewable_energy,0.3641131000000314,0.0981473099996947,165599,198104
+https://en.wikipedia.org/wiki/Solar_energy,0.18251284000016313,0.05053422999990289,79896,104184
+https://en.wikipedia.org/wiki/Wind_power,0.2421245400000771,0.058000839999476736,98255,119248
+https://en.wikipedia.org/wiki/Greenhouse_gas,0.17512630999972317,0.05573924000000261,72183,87724
