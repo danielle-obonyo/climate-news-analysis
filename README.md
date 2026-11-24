@@ -1,26 +1,23 @@
 Climate Change and Renewable Energy: Web Scraping and Text Analysis
-Project Overview
+1. Project Overview
 
 This project explores climate change and renewable energy through web scraping and text analysis.
 
 The purpose of this assignment is to collect at least 50 publicly available news articles, extract their text, generate summaries, and analyze their relevance and sentiment.
 
-The project uses Python libraries to compare web scraping techniques and apply text analysis algorithms.
-
 Project Objectives
 Compare BeautifulSoup and Scrapy as web scraping tools.
-Conduct a performance benchmark between the two libraries.
-Collect at least 50 climate change and renewable energy articles.
+Conduct a performance benchmark.
+Collect at least 50 climate-related news articles.
 Extract article content using Trafilatura.
 Apply TF-IDF to measure topic relevance.
-Apply VADER to analyze article sentiment.
+Apply VADER to analyze sentiment.
 Generate summaries for each article.
-Calculate a positive or negative importance score for each article.
-Export the results into a CSV file.
+Calculate a positive or negative importance score.
+Export the results into CSV files.
+2. Web Scraping Library Comparison
 
-Web Scraping Library Comparison
-
-Two web scraping libraries were compared: BeautifulSoup and Scrapy.
+Two popular web scraping libraries were compared: BeautifulSoup and Scrapy.
 
 BeautifulSoup
 
@@ -49,12 +46,12 @@ Requests was used to download webpages, BeautifulSoup to parse RSS feeds, and Tr
 
 The benchmark measured HTML parsing performance rather than the complete crawling capabilities of Scrapy.
 
-Data Collection
+3. Data Collection
 Data Source
 
-The project collected publicly available news articles from The Guardian using its RSS feeds.
+Publicly available news articles were collected from The Guardian using its RSS feeds.
 
-The articles focused on the following topics:
+The articles focused on:
 
 Climate Change
 Renewable Energy
@@ -62,33 +59,23 @@ Environment
 Science
 World News
 Data Collection Results
-
-A total of 53 unique relevant article URLs were discovered.
-
-Of these:
-
-50 articles were successfully extracted.
-3 articles failed or were skipped.
-The extraction success rate was 94.34%.
+Measurement	Result
+Unique relevant articles discovered	53
+Successfully extracted articles	50
+Failed or skipped articles	3
+Extraction success rate	94.34%
 Article Extraction
-
-The Requests library was used to retrieve webpage content.
-
+Requests was used to retrieve webpage content.
 BeautifulSoup was used to parse RSS feeds and identify article links and metadata.
-
 Trafilatura was used to extract the main article text while reducing unnecessary webpage content.
 
 The collected dataset includes article titles, URLs, topics, publication dates and extracted article text.
 
-Output Files
-
-The collected data was saved as CSV files in the data folder.
-
-Text Analysis Methods
+4. Text Analysis Methods
 
 Two text analysis algorithms were applied to the 50 successfully extracted articles.
 
-1. TF-IDF (Topic Relevance)
+4.1 TF-IDF (Topic Relevance)
 
 TF-IDF stands for Term Frequency–Inverse Document Frequency.
 
@@ -98,7 +85,7 @@ Cosine similarity was used to compare each article's TF-IDF vector with a predef
 
 The relevance score ranges from 0 to 1. A higher score indicates greater similarity to the research topic.
 
-2. VADER (Sentiment Analysis)
+4.2 VADER (Sentiment Analysis)
 
 VADER stands for Valence Aware Dictionary and sEntiment Reasoner.
 
@@ -113,29 +100,30 @@ Compound sentiment
 
 The compound score ranges from -1 (most negative) to +1 (most positive).
 
-3. Importance Score
+4.3 Importance Score
 
 The TF-IDF relevance score and VADER compound sentiment score were combined to calculate an importance score.
 
-The formula used was:
+Formula:
 
 Importance Score = 100 × Relevance Score × Compound Sentiment
 
-This produces a score between -100 and +100.
+The result ranges from -100 to +100.
 
-A positive score indicates positive sentiment combined with topic relevance, while a negative score indicates negative sentiment combined with topic relevance.
+A positive score indicates positive sentiment combined with topic relevance.
+A negative score indicates negative sentiment combined with topic relevance.
+A score close to zero indicates low relevance, neutral sentiment, or both.
+4.4 Importance Direction
 
-4. Importance Direction
-
-Articles were classified using the following thresholds:
+Articles were classified using these thresholds:
 
 Positive: Importance score greater than +2.
 Negative: Importance score less than -2.
 Neutral: Importance score between -2 and +2.
 
-These thresholds were selected for this project as practical classification rules.
+These thresholds were selected as practical classification rules for this project.
 
-5. Article Summarization
+4.5 Article Summarization
 
 An extractive summarization technique was implemented using TF-IDF.
 
@@ -143,7 +131,7 @@ The method identifies informative sentences within each article and selects up t
 
 The summaries use sentences from the original articles rather than generating new text.
 
-Analysis Results
+5. Analysis Results
 
 A total of 50 successfully extracted articles were analyzed using TF-IDF and VADER.
 
@@ -169,9 +157,9 @@ Limitations
 VADER evaluates emotional language and may not fully understand the context of environmental reporting.
 Negative sentiment does not necessarily mean an article is against renewable energy or climate action.
 TF-IDF measures word importance and similarity rather than deeper semantic meaning.
-Extractive summaries may occasionally include headings or sentences that are less informative.
+Extractive summaries may occasionally include headings or less informative sentences.
 The results depend on the articles collected and should not be considered representative of all climate news.
-Conclusion
+6. Conclusion
 
 This project demonstrated how Python can be used to collect online news articles and apply text analysis techniques.
 
@@ -179,7 +167,7 @@ The comparison showed that Scrapy Selector was faster in the HTML parsing benchm
 
 The combination of TF-IDF, VADER and extractive summarization provided a way to evaluate topic relevance, sentiment and importance across 50 climate-related news articles.
 
-Installation and Usage
+7. Installation and Usage
 Requirements
 Python 3.12
 Anaconda or Miniconda
@@ -188,14 +176,14 @@ Environment Setup
 
 The project was developed using a Conda virtual environment named climate-analysis.
 
-To activate the environment:
+Activate the environment:
 
 bash
 conda activate climate-analysis
 
 Install Dependencies
 
-Install the required Python packages using:
+Install the required Python packages:
 
 bash
 pip install -r requirements.txt
@@ -213,9 +201,18 @@ The final analysis is available in:
 
 data/analysis_results.csv
 
-This file contains the article URLs, titles, topics, publication dates, summaries, relevance scores, sentiment scores, importance scores and importance directions.
+This file contains:
 
-Project Structure
+Article URLs
+Article titles
+Topics
+Publication dates
+Summaries
+Relevance scores
+Sentiment scores
+Importance scores
+Importance directions
+8. Project Structure
 text
 climate-news-analysis/
 │
@@ -234,8 +231,8 @@ climate-news-analysis/
 ├── reports/
 │   └── benchmark_results.csv
 │
-├── requirements.txt
-└── README.md
+├── README.md
+└── requirements.txt
 
 
-The actual virtual environment directory is not included in the submission.
+The actual virtual environment directory is not included in the submission. Its dependencies are listed separately in requirements.txt.
